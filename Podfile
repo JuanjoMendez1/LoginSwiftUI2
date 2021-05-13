@@ -7,4 +7,5 @@ target 'LoginSwiftUI2' do
 
   # Pods for LoginSwiftUI2
   pod 'Firebase/Auth'
+  pod 'GoogleSignIn'
 end

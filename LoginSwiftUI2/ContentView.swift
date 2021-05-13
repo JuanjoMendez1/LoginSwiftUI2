@@ -7,6 +7,7 @@
 
 import SwiftUI
 import Firebase
+import GoogleSignIn
 
 struct ContentView: View {
     
@@ -105,7 +106,8 @@ struct LoginView : View{
                 }
                 .padding(.top, 25)
                 
-                
+                google().frame(width: 130, height: 50, alignment: .center)
+                    .clipShape(Capsule())
                 
                 Button(action: model.resetPassword){
                     Text("¿Olvidaste tu contraseña?")
@@ -468,4 +470,25 @@ struct LoadingView : View{
         })
         
     }
+}
+
+struct google : UIViewRepresentable{
+
+    //    User Status ....
+        @AppStorage("log_Status") var status = false
+
+    func makeUIView(context: UIViewRepresentableContext<google>) -> some GIDSignInButton {
+        let button = GIDSignInButton()
+        button.colorScheme = .light
+        GIDSignIn.sharedInstance()?.presentingViewController = UIApplication.shared.windows.last?.rootViewController
+        withAnimation{
+            self.status = true
+        }
+
+        return button
+    }
+    func updateUIView(_ uiView: google.UIViewType, context: UIViewRepresentableContext<google>) {
+
+    }
+
 }
