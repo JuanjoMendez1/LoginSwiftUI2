@@ -64,14 +64,11 @@ struct LoginView : View{
                 
                 VStack (spacing: 4){
                     HStack(spacing: 0){
-                        Text("Directorio")
+                        Text("Autenticación")
                             .font(.system(size: 35, weight: .heavy))
                             .foregroundColor(.white)
-                        Text("Volcanes")
-                            .font(.system(size: 35, weight: .heavy))
-                            .foregroundColor(Color("txt"))
                     }
-                    Text("Encuentra lo que necesites")
+                    Text("Metodos de Autenticación")
                         .foregroundColor(Color.black.opacity(0.3))
                         .fontWeight(.heavy)
                 }
